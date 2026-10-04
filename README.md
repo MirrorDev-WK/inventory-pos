@@ -17,7 +17,7 @@ An inventory-aware, one-store mini-market POS for full-stack practice. It uses T
 
 1. Create a PostgreSQL database (Neon or Supabase are suitable) and copy its connection string.
 2. Run `Copy-Item .env.example .env` in PowerShell.
-3. Put your database connection string in `DATABASE_URL` and a secure random string in `AUTH_SECRET`.
+3. Put Supabase's transaction-pooler string in `DATABASE_URL`, its session-mode string in `DIRECT_URL`, and a secure random string in `AUTH_SECRET`.
 4. Install packages: `npm install`.
 5. Generate and apply the first migration: `npx prisma migrate dev --name init`.
 6. Seed demo staff, store data, products, and initial stock: `npm run db:seed`.
