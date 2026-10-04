@@ -1,0 +1,15 @@
+# Dependencies and generated output
+node_modules/
+.next/
+coverage/
+*.tsbuildinfo
+
+# Secrets and local environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Local tools
+.DS_Store
+npm-debug.log*
