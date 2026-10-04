@@ -27,5 +27,5 @@ export async function archiveProduct(productId: string) {
 
 export async function listProductListItems() {
   const products = await prisma.product.findMany({ where: { archivedAt: null }, include: { category: true }, orderBy: { name: "asc" } });
-  return products.map((product) => ({ id: product.id, sku: product.sku, barcode: product.barcode, name: product.name, categoryName: product.category.name, sellingPrice: Number(product.sellingPrice), stockOnHand: product.stockOnHand, reorderLevel: product.reorderLevel }));
+  return products.map((product) => ({ id: product.id, sku: product.sku, barcode: product.barcode, name: product.name, categoryName: product.category.name, sellingPrice: Number(product.sellingPrice), sellingPriceSatang: Number(product.sellingPrice.mul(100).toFixed(0)), stockOnHand: product.stockOnHand, reorderLevel: product.reorderLevel }));
 }
